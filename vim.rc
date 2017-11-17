@@ -1,0 +1,56 @@
+" ------------------------------------------------------------------------------
+"  Syntax
+" ------------------------------------------------------------------------------
+" Enables Vim to show parts of the text in another font or color based on
+" Language
+syntax enable
+" Shortened for:
+"   filetype on
+"       = 'detection' => On load, Vim trys to detect the filetype
+"   filetype plugin on
+"       => When a file is edited its plugin file is loaded (script that is run
+"              automatically when Vim detects the type)
+"   filetype indent on
+"       => When a file is edited its indent file is loaded (auto indenting)
+filetype plugin indent on
+" Highlight PHP syntax in HTML files
+au  BufNewFile,BufRead *.html set filetype=php
+
+
+" ------------------------------------------------------------------------------
+"  Editor
+" ------------------------------------------------------------------------------
+" Shows Vim mode currently in i.e. -- INSERT --
+set showmode
+" Turns on line numbers
+set number
+" Sets the number of context lines you would like to see above and below the
+"   cursor
+set scrolloff=4
+
+" ------------------------------------------------------------------------------
+"  Tabs
+" ------------------------------------------------------------------------------
+" Tabs appear as 4 spaces wide 'maximum actual width'
+set tabstop=4
+" Size of an indent = 4 (needs to equal tabstop)
+set shiftwidth=4
+" Insert spaces instead of tabs
+set expandtab
+
+" ------------------------------------------------------------------------------
+"  Add-Ons
+" ------------------------------------------------------------------------------
+" Enables a menu at the bottom of the vim/gvim window
+"   1. (on the first tab) a list of completions will be shown and the command
+"           will be completed to the longest common command
+"   2. (on second tab) the wildmenu will show up with all the completions that
+"           were listed before.
+set wildmenu
+" The Vim editor will start searching when you type the first character of the
+"   search string. As you type in more characters, the search is refined.
+set incsearch
+" Any search highlights the string matched by the search.
+set hlsearch
+" Highlights matching bracket pairs
+set showmatch
